@@ -1,0 +1,14 @@
+<div class="home-banner">
+<h1>Movies</h1>
+</div>
+
+
+<div class="container d-flex justify-content-around mt-3">
+<% @lists.each do |list| %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title btn btn-outline-primary"> <%= link_to list.name, list_path(list) %></h5>
+  </div>
+</div>
+    <% end %>
+</div>

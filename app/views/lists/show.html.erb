@@ -1,0 +1,22 @@
+
+<div class="list-banner">
+    <h1 class="list-title"><%= @list.name %></h1>
+</div>
+<div class="movies-box">
+  <% @list.movies.each do |movie| %>
+    <div class="movie-card">
+      <div class="movie-img">
+        <%= image_tag(movie.poster_url, width: 300, height: 400) %>
+      </div>
+      <div class="movie-info">
+        <%= movie.title %>
+        <%= movie.rating %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%# <%= link_to 'Back', lists_path %>
+<%= link_to "Go back", lists_path, class: "btn btn-flat" %>
+
+<%= link_to 'add movie', new_list_bookmark_path(@list) %>
